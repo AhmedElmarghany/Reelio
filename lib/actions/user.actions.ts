@@ -1,0 +1,60 @@
+"use server"
+
+import { revalidatePath } from "next/cache";
+import User from "../models/user.model";
+import { connectToDB } from "../mongoose"
+
+interface Params{
+    userId: String,
+    username: String,
+    name: String,
+    bio: String,
+    image: String,
+    path: string
+}
+
+export async function updateUser({
+    userId,
+    username,
+    name,
+    bio,
+    image,
+    path
+}: Params): Promise<void>{
+    connectToDB();
+
+    try{
+        await User.findOneAndUpdate(
+            { id: userId },
+            {
+                //I added this line
+                id: userId,
+                username: username.toLocaleLowerCase(),
+                name,
+                bio,
+                image,
+                onboarded: true
+            },
+            { upsert: true }, //combinatoin between update & insert
+        );
+    
+        if(path === '/profile/edit'){
+            revalidatePath(path)
+        }    
+    } catch(error: any){
+        throw new Error(`Failed to create/Update user: ${error.message}`)
+    }
+}
+
+export async function fetchUser(userId: string){
+    try{
+        connectToDB();
+        return await User.findOne({ id: userId })
+        // .populate({
+        //     path: "communites",
+        //     model: Community
+        // })
+    }catch(error: any){
+        throw new Error(`Failed to fetch user ${error.message}`)
+    }
+}
