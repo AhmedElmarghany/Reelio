@@ -1,5 +1,5 @@
 
-### Reelio
+# Reelio
 **Social Media Platform** for rating movies and sharing reviews, built for Movie Enthusiasts.
 
 
