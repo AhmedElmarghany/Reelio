@@ -1,6 +1,5 @@
 <p align="center">
-  <img width="15%" alt="shortcut logo" src="https://github.com/user-attachments/assets/c7bd61a4-ce00-43c2-b0c7-20e6d2249032" />
-  <img width="719" height="189" alt="shortcut logo" src="https://github.com/user-attachments/assets/c7bd61a4-ce00-43c2-b0c7-20e6d2249032" />
+  <img width="35%" alt="shortcut logo" src="https://github.com/user-attachments/assets/c7bd61a4-ce00-43c2-b0c7-20e6d2249032" />
   <h1 align="center">
     Reelio
   </h1>
