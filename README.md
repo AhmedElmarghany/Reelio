@@ -1,11 +1,11 @@
-<p >
-  <h1 >
+<p>
+  <h1>
     Reelio
   </h1>
-<p >Social Media Platform for rating movies and sharing reviews, built for Movie Enthusiasts.</p>
+<p >*Social Media Platform* for rating movies and sharing reviews, built for Movie Enthusiasts.</p>
 </p>
 
-<div align="center">
+<div>
 <img width="2998" height="1468" alt="home" src="https://github.com/user-attachments/assets/add233b8-3774-4867-8001-d547ab6ada3a" />
 <div/>
 
