@@ -1,8 +1,8 @@
-<p align="center">
-  <h1 align="center">
+<p >
+  <h1 >
     Reelio
   </h1>
-<p align="center">Social Media Platform for rating movies and sharing reviews, built for Movie Enthusiasts.</p>
+<p >Social Media Platform for rating movies and sharing reviews, built for Movie Enthusiasts.</p>
 </p>
 
 <div align="center">
