@@ -12,13 +12,13 @@
 - Share New Post.
 - Posts Include Text(Caption).
 - Like/Unlike Posts.
-- Suggested Users.
+- Suggested Users/Movies.
 - Follow/Unfollow Users.
-- Bookmark revirews.
-- Create a list for favourite movies.
-- Add comment on posts
+- Bookmark Revirews.
+- Create a list for Favourite Movies.
+- Comment on Reviews.
 - Search for any movie.
-- Notifications & Activity page.
+- Notifications & Activity pages.
 - Update/Edit Profile Page User Data.
 - Responsive design to fit all screens.
 
