@@ -1,8 +1,5 @@
 <p align="center">
-  <img width="35%" alt="shortcut logo" src="https://github.com/user-attachments/assets/c7bd61a4-ce00-43c2-b0c7-20e6d2249032" />
-  <h1 align="center">
-    Reelio
-  </h1>
+  <img width="20%" alt="shortcut logo" src="https://github.com/user-attachments/assets/c7bd61a4-ce00-43c2-b0c7-20e6d2249032" />
 <p align="center">An Social Media Platform for rating movies and share reviews, built for Movies enthusiasts.</p>
 </p>
 
