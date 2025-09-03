@@ -2,6 +2,7 @@
   <img width="20%" alt="shortcut logo" src="https://github.com/user-attachments/assets/c7bd61a4-ce00-43c2-b0c7-20e6d2249032" />
 <p align="center">Social Media Platform for rating movies and sharing reviews, built for Movie Enthusiasts.</p>
 </p>
+<hr/>
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
