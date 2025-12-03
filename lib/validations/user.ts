@@ -30,12 +30,6 @@ export const UserValidation = z.object({
 });
 
 export const SignUpValidation = z.object({
-  username: z.string().min(3, {
-    message: "Username must be at least 3 characters.",
-  }).max(12, {
-      message: "Username can't exceeds 12 characters",
-  }),
-
   email: z.string().email({ message: "Enter valid Email" }),
 
   password: z.string().min(6, {

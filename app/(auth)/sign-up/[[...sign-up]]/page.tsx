@@ -1,19 +1,23 @@
 import { SignUp } from "@/components/forms/SignUp";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Page() {
   return (
-    <div className="flex items-center justify-center h-screen">
-      <div className="flex flex-col items-center justify-center p-4 bg-dark-2 min-w-96 rounded-xl border-2 border-dark-4">
-        <Image src={"/full_logo.svg"} width={140} height={100} alt="logo" className="mb-4" />
-        <hr className="border-neutral-600 w-36" />
-        <h1 className="text-primary font-semibold py-3">Sign Up</h1>
+    <div className="flex items-center justify-center h-[85vh] xl:justify-end xl:-translate-x-50">
+      <div className="flex flex-col items-center justify-center p-4 py-9 max-w-xs:px-0 bg-card min-w-96 rounded-xl border border-border relative overflow-hidden max-w-xs:min-w-11/12" style={{
+        backgroundImage: `url('/Green-Ellipse.png')`,
+        backgroundSize: "cover",
+        backgroundPosition: "60px -180px",
+        backgroundRepeat: "no-repeat",
+        // zIndex: -1,
+        position: "absolute",
+      }}>
+        <h1 className="text-5xl font-lobster text-primary">Reelio</h1>
+        <p className="font-inter text-[14px] text-card-foreground py-6">Please Enter your details to sign up</p>
         <SignUp />
-        <h1 className="text-neutral-100 py-3">You already have an account? <Link href="/sign-in" className="text-primary">signin</Link></h1>
+        <h1 className="font-inter text-foreground text-[14px] py-6">You already have an account? <Link href="/sign-in" className="text-primary">Login</Link></h1>
       </div>
     </div>
-
   )
 }
 
