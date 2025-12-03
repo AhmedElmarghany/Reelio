@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lobster, Inter, DM_Serif_Text } from "next/font/google";
 import "./globals.css";
+import Providers from "./Providers";
 
 const lobster = Lobster({
   weight: '400',
@@ -9,7 +10,7 @@ const lobster = Lobster({
 });
 
 const inter = Inter({
-  weight: ["300", "400","500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-inter",
   subsets: ["latin"],
 });
@@ -35,7 +36,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${lobster.variable} ${dmSerif.variable} antialiased`}
       >
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );
