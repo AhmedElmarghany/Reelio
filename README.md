@@ -1,38 +1,4 @@
-
-# Reelio
-**Social Media Platform** for rating movies and sharing reviews, built for Movie Enthusiasts.
-
-
-<img width="2998" height="1468" alt="home" src="https://github.com/user-attachments/assets/add233b8-3774-4867-8001-d547ab6ada3a" />
-
-
-## 🚀 Features :
-
-- SignUp & Login Page.
-- Share New Post.
-- Posts Include Text(Caption).
-- Like/Unlike Posts.
-- Suggested Users/Movies.
-- Follow/Unfollow Users.
-- Bookmark Revirews.
-- Create a list for Favourite Movies.
-- Comment on Reviews.
-- Search for any movie.
-- Notifications & Activity pages.
-- Update/Edit Profile Page User Data.
-- Responsive design to fit all screens.
-
-
-<img width="2810" height="1488" alt="login" src="https://github.com/user-attachments/assets/797d153b-a5f7-415b-b51f-b7ba948b0965" />
-
-<img width="3184" height="1476" alt="movie" src="https://github.com/user-attachments/assets/e0fa01c0-59ae-46a7-97f6-066a388de6fa" />
-
-<img width="3184" height="1476" alt="favourites" src="https://github.com/user-attachments/assets/2ac1efdb-3aa7-4872-bb65-cd98cb8701c5" />
-
-<img width="3184" height="1476" alt="profile" src="https://github.com/user-attachments/assets/8f63ef0c-c10d-454e-ba68-acea721ad8c0" />
-
-<img width="2601" height="1640" alt="responsive" src="https://github.com/user-attachments/assets/792eb4b4-6670-4599-904f-c8cd0c15b9bc" />
-
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
@@ -50,3 +16,21 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
