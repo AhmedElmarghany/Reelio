@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import Cookies from "js-cookie";
 
 interface OnboardingResponse {
   success: boolean;
@@ -31,15 +32,17 @@ export const userApi = createApi({
   reducerPath: "userApi",
   baseQuery: fetchBaseQuery({
     baseUrl: `${BASE}/user`,
+    prepareHeaders: (headers) => {
+      const token = Cookies.get("token");
+      if (token) headers.set("Authorization", `Bearer ${token}`);
+      return headers;
+    },
   }),
   endpoints: (builder) => ({
     onboarding: builder.mutation<OnboardingResponse, OnboardingParameters>({
       query: (credentials) => ({
         url: "onboarding",
         method: "POST",
-        headers: {
-          Authorization: `Bearer ${credentials.token}`,
-        },
         body: JSON.stringify({
           name: credentials.user_info.name,
           image: credentials.user_info.image,
@@ -48,7 +51,22 @@ export const userApi = createApi({
         }),
       }),
     }),
+    followUnfollow: builder.mutation({
+      query: (credentials) => ({
+        url: "userFollowing",
+        method: "POST",
+        body: JSON.stringify({
+          followed_id: credentials.user_id,
+        }),
+      }),
+    }),
+    getRandomUsers: builder.query<any, void>({
+      query: () => ({
+        url: "randomUsers",
+        method: "GET",
+      }),
+    }),
   }),
 });
 
-export const { useOnboardingMutation } = userApi;
+export const { useOnboardingMutation, useFollowUnfollowMutation, useGetRandomUsersQuery } = userApi;

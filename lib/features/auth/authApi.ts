@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { logout as clearUserData, setCredentials } from "../user/userSlice";
+import Cookies from "js-cookie";
 
 interface RegisterResponse {
   status: string;
@@ -72,7 +73,14 @@ export const authApi = createApi({
         async onQueryStarted(_, { dispatch, queryFulfilled }) {
           try {
             const { data } = await queryFulfilled;
-            dispatch(setCredentials({ user_data: (data as LoginSuccessResponse).user_data }));
+            const { token, user_data } = data as LoginSuccessResponse;
+
+            Cookies.set("token", token, {
+              expires: 7, // expires in 7 days
+              secure: true,
+            });
+
+            dispatch(setCredentials({ user_data: user_data }));
           } catch (err) {
             console.log("Failed:", err);
           }
@@ -137,5 +145,6 @@ export const {
   useLoginMutation,
   useRegisterMutation,
   useCurrentUserQuery,
+  useLazyCurrentUserQuery,
   useLogoutMutation,
 } = authApi;

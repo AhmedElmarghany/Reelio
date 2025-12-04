@@ -108,7 +108,7 @@ export const tmdbApi = createApi({
       return headers;
     },
    }),
-  keepUnusedDataFor: 60, // cache for 1 minute
+  keepUnusedDataFor: 60 * 15, // cache for 15 minute
   endpoints: (builder) => ({
     getMovieDetails: builder.query<MovieDetails, number>({
       query: (movie_id) => ({
@@ -128,4 +128,4 @@ export const tmdbApi = createApi({
   }),
 });
 
-export const { useGetMovieDetailsQuery, useLazyGetMovieDetailsQuery, useLazyMovieSearchQuery, useLazyGetTrendingMoviesQuery } = tmdbApi;
+export const { useGetMovieDetailsQuery, useLazyGetMovieDetailsQuery, useLazyMovieSearchQuery, useLazyGetTrendingMoviesQuery, useGetTrendingMoviesQuery } = tmdbApi;

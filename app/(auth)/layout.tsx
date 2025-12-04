@@ -1,6 +1,6 @@
 import { Lobster, Inter, DM_Serif_Text } from "next/font/google";
 import '../globals.css'
-import Providers from '../Providers';
+// import Providers from '../Providers';
 export const metadata = {
   title: "Reelio",
   description: "Share your voice, Shape the reel",
@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${lobster.variable} ${dmSerif.variable} bg-background`}>
-        <Providers>
+        {/* <Providers> */}
           <main className="bg-background p-10 max-sm:p-4"
             style={{
               height: "100vh",
@@ -51,7 +51,7 @@ export default function RootLayout({
           >
             {children}
           </main>
-        </Providers>
+        {/* </Providers> */}
       </body>
     </html>
   )
