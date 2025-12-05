@@ -8,12 +8,14 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 // import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 import Cookies from "js-cookie";
+import ReviewCard from "@/components/cards/ReviewCard";
 // import { useFollowUnfollowMutation, useOnboardingMutation } from "@/lib/features/user/userApi";
 // import { useGetAllPostsQuery } from "@/lib/features/posts/postsApi";
 // import { useLazyGetMovieDetailsQuery, useLazyGetTrendingMoviesQuery, useLazyMovieSearchQuery } from "@/lib/features/tmdb/tmdbApi";
 // import { useRouter } from "next/navigation";
 
-// import { useGetAllPostsQuery } from "@/lib/features/posts/postsApi";
+import { useGetAllPostsQuery } from "@/lib/features/posts/postsApi";
+import Spinner from "@/components/icons/Spinner";
 
 
 const Home = () => {
@@ -25,7 +27,7 @@ const Home = () => {
   // const [logout, { isLoading: logoutIsLoading, isSuccess: logoutIsSuccess, isError: logoutIsError, error: logoutError }] = useLogoutMutation();
   // const [onboard, { isLoading: onboardIsLoading, isSuccess: onboardIsSuccess, isError: onboardIsError, error: onboardError }] = useOnboardingMutation();
   // const [followUnfollow, { isLoading: followLoading, isSuccess: followSuccess, isError: followIsError, error: followError }] = useFollowUnfollowMutation();
-  // const { } = useGetAllPostsQuery(token);
+  const { data: posts, isLoading: postsIsLoading } = useGetAllPostsQuery();
   // console.log("here is data: " + JSON.stringify(posts));
 
   // const [movieId, setMovieId] = useState<number>();
@@ -46,11 +48,11 @@ const Home = () => {
   const currentUserDataRedux = useSelector((state: RootState) => state.user.user_data)
   // const [checkingAuth, setCheckingAuth] = useState(true);
 
-    const { isLoading } = useCurrentUserQuery(token!, {
+  const { isLoading } = useCurrentUserQuery(token!, {
     skip: currentUserDataRedux !== null, // Skip query if no token
   });
 
-  if(isLoading) return null;
+  if (isLoading) return null;
 
 
 
@@ -81,9 +83,40 @@ const Home = () => {
   // }
 
   return (
-    <div className="Heading m-14 text-xl w-80">
-      Hello
-    </div>
+    <section className={`mt-0 flex flex-col gap-2 max-sm:gap-4`}>
+      {postsIsLoading && 
+      <div className="flex items-center justify-center gap-2 w-full my-3 text-center">
+        <Spinner size={18}/>
+        <p className=""> Loading...</p>
+      </div>
+      }
+      {!postsIsLoading && !posts ? (
+        <p className="no-result">There are no reviews yet.</p>
+      ) : (
+        <>
+          {posts?.postsList.map((post) => (
+            <ReviewCard
+              key={post.post.post_data.post_id}
+              id={post.post.post_data.post_id}
+              currentUserId={post.post.post_data.user_id}
+              content={post.post.post_data.text}
+              author={post.post.post_data.user_id}
+              createdAt={post.post.post_data.date_time}
+              is_liked={post.post.is_liked}
+              is_Bookmarked={post.post.is_bookmarked}
+              movieId={post.post.post_data.movie_id}
+              username={post.post.post_data.user_name}
+              name={post.post.post_data.name}
+              pic_url={post.post.post_data.pic_url}
+              rate={post.post.post_data.rate}
+              year={post.post.movie_data[0].year}
+              title={post.post.movie_data[0].title}
+              posterLink={post.post.movie_data[0].posterLink}
+            />
+          ))}
+        </>
+      )}
+    </section>
   )
 }
 
