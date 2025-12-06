@@ -85,12 +85,12 @@ const ReviewCard = ({
     function likeToogler(currentValue: boolean, setState: React.Dispatch<React.SetStateAction<boolean>>, post_id: string) {
         const newValue = !currentValue;
         setState(newValue);
-        toggleLike({post_id: post_id});
+        toggleLike({ post_id: post_id });
     }
     function BookmarkToogler(currentValue: boolean, setState: React.Dispatch<React.SetStateAction<boolean>>, post_id: string) {
         const newValue = !currentValue;
         setState(newValue);
-        toggleBookmark({post_id: post_id});
+        toggleBookmark({ post_id: post_id });
     }
 
     return (
@@ -118,7 +118,9 @@ const ReviewCard = ({
                     </div>
                 </div>
                 <div className="ml-2">
-                    <MoviePoster poster_path={posterLink} size="medium" />
+                    <Link href={`/movie/${movieId}`}>
+                        <MoviePoster poster_path={posterLink} size="medium" />
+                    </Link>
                 </div>
 
             </div>
