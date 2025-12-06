@@ -65,7 +65,13 @@ export const userApi = createApi({
         method: "GET",
       }),
     }),
+    getNotifications: builder.query<any, void>({
+      query: () => ({
+        url: "notifications",
+        method: "GET",
+      }),
+    }),
   }),
 });
 
-export const { useOnboardingMutation, useFollowUnfollowMutation, useGetRandomUsersQuery } = userApi;
+export const { useOnboardingMutation, useFollowUnfollowMutation, useGetRandomUsersQuery, useGetNotificationsQuery } = userApi;
