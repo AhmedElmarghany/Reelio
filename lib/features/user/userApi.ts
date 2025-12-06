@@ -25,7 +25,6 @@ interface OnboardingParameters {
     username: string;
     bio: string;
   };
-  token: string;
 }
 const BASE = process.env.NEXT_PUBLIC_CLIENT_BASE;
 export const userApi = createApi({

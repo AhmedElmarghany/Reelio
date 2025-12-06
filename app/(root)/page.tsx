@@ -16,6 +16,7 @@ import ReviewCard from "@/components/cards/ReviewCard";
 
 import { useGetAllPostsQuery } from "@/lib/features/posts/postsApi";
 import Spinner from "@/components/icons/Spinner";
+// import { usePathname } from "next/navigation";
 
 
 const Home = () => {
@@ -81,6 +82,7 @@ const Home = () => {
   //   e.preventDefault();
   //   searchMovie((searchQuery as string));
   // }
+  
 
   return (
     <section className={`mt-0 flex flex-col gap-2 max-sm:gap-4`}>

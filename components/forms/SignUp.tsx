@@ -36,7 +36,7 @@ export function SignUp() {
             password: data.password,
         }).unwrap();
 
-        router.push("/onboarding");
+        router.push("/sign-in");
     }
 
     return (
