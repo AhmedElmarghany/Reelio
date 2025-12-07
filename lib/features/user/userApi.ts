@@ -77,7 +77,23 @@ export const userApi = createApi({
         method: "GET",
       }),
     }),
+    getProfile: builder.query<any, { profile_id: number }>({
+      query: (credentials) => ({
+        url: "getProfile",
+        method: "GET",
+        body: JSON.stringify({
+          id: credentials.profile_id,
+        }),
+      }),
+    }),
   }),
 });
 
-export const { useOnboardingMutation, useFollowUnfollowMutation, useGetRandomUsersQuery, useGetNotificationsQuery, useGetActivitiesQuery } = userApi;
+export const {
+  useOnboardingMutation,
+  useFollowUnfollowMutation,
+  useGetRandomUsersQuery,
+  useGetNotificationsQuery,
+  useGetActivitiesQuery,
+  useGetProfileQuery,
+} = userApi;

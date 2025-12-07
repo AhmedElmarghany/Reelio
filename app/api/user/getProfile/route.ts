@@ -3,6 +3,8 @@ import { NextResponse } from "next/server";
 const BASE = process.env.PHP_API_BASE;
 export async function GET(request: Request) {
   const auth = request.headers.get("Authorization");
+  const body = await request.json();
+  console.log(body);
   // console.log("this is auth");
   // console.log(auth);
   if (auth === "Bearer undefined") {
@@ -14,10 +16,11 @@ export async function GET(request: Request) {
       headers: {
         "Content-Type": "application/json",
         Authorization: `${auth}`,
+        body: JSON.stringify(body),
       },
     });
     const data = await res.json();
-    // console.log(data);
+    console.log(data);
     return NextResponse.json(data);
   } catch (error) {
     return NextResponse.json({ error: error }, { status: 500 });
