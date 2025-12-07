@@ -51,7 +51,13 @@ export const postsApi = createApi({
         }),
       }),
     }),
+    getBookmarks: builder.query<any, void>({
+      query: () => ({
+        url: "getBookmarks",
+        method: "GET",
+      }),
+    }),
   }),
 });
 
-export const { useGetAllPostsQuery, useToggleLikeMutation, useToggleBookmarkMutation } = postsApi;
+export const { useGetAllPostsQuery, useToggleLikeMutation, useToggleBookmarkMutation, useGetBookmarksQuery } = postsApi;
