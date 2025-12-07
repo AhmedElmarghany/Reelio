@@ -241,6 +241,15 @@
     @apply font-inter text-[14px] font-semibold text-foreground my-3 text-center;
   }
 
+  .comment-form {
+    @apply mt-10 flex items-center gap-4 border-y border-y-border-dark py-5 @max-xs:flex-col;
+  }
+
+  .comment-form_btn {
+    @apply rounded-3xl bg-foreground px-8 py-2 font-semibold text-primary-foreground @max-xs:w-full hover:bg-primary;
+  }
+
+
 
 
 }

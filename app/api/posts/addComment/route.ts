@@ -9,8 +9,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "missing token" }, { status: 401 });
   }
   const body = await request.json();
+  // console.log(body);
   try {
-    const res = await fetch(`${BASE}/posts/createPost.php`, {
+    const res = await fetch(`${BASE}/posts/postCommentInsert.php`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -19,7 +20,7 @@ export async function POST(request: Request) {
       body: JSON.stringify(body),
     });
     const data = await res.json();
-    console.log(data);
+    // console.log(data);
     return NextResponse.json(data);
   } catch (error) {
     return NextResponse.json({ error: error }, { status: 500 });

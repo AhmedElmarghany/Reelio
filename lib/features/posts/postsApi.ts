@@ -14,14 +14,14 @@ export const postsApi = createApi({
       return headers;
     },
   }),
-  tagTypes: ['Post'],
+  tagTypes: ["Post"],
   endpoints: (builder) => ({
     getAllPosts: builder.query<PostsResponse, void>({
       query: () => ({
         url: "all",
         method: "GET",
       }),
-      providesTags: ['Post'],
+      providesTags: ["Post"],
       async onQueryStarted(_, { dispatch, queryFulfilled }) {
         try {
           const { data } = await queryFulfilled;
@@ -53,7 +53,7 @@ export const postsApi = createApi({
           rate: credentials.rate,
         }),
       }),
-      invalidatesTags: ['Post'],
+      invalidatesTags: ["Post"],
     }),
     toggleBookmark: builder.mutation({
       query: (credentials) => ({
@@ -70,6 +70,22 @@ export const postsApi = createApi({
         method: "GET",
       }),
     }),
+    getPost: builder.query({
+      query: (post_id) => ({
+        url: `getPost?post_id=${post_id}`,
+        method: "GET",
+      }),
+    }),
+    addComment: builder.mutation({
+      query: (credentials) => ({
+        url: "addComment",
+        method: "POST",
+        body: JSON.stringify({
+          post_id: credentials.post_id,
+          text: credentials.text,
+        }),
+      }),
+    }),
   }),
 });
 
@@ -79,4 +95,6 @@ export const {
   useToggleBookmarkMutation,
   useGetBookmarksQuery,
   useCreatePostMutation,
+  useGetPostQuery,
+  useAddCommentMutation,
 } = postsApi;
