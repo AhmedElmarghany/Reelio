@@ -28,6 +28,7 @@
     "react-dom": "19.2.0",
     "react-hook-form": "^7.67.0",
     "react-redux": "^9.2.0",
+    "react-ts-rating-star": "^1.0.4",
     "tailwind-merge": "^3.4.0",
     "uploadthing": "^7.7.4",
     "zod": "^4.1.13"

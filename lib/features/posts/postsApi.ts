@@ -3,7 +3,6 @@ import { PostsResponse, setPosts } from "./postsSlice";
 // import { RootState } from "../../store";
 import Cookies from "js-cookie";
 
-
 const BASE = process.env.NEXT_PUBLIC_CLIENT_BASE;
 export const postsApi = createApi({
   reducerPath: "postsApi",
@@ -15,15 +14,14 @@ export const postsApi = createApi({
       return headers;
     },
   }),
+  tagTypes: ['Post'],
   endpoints: (builder) => ({
     getAllPosts: builder.query<PostsResponse, void>({
       query: () => ({
         url: "all",
         method: "GET",
-        // headers: {
-        //   Authorization: auth,
-        // },
       }),
+      providesTags: ['Post'],
       async onQueryStarted(_, { dispatch, queryFulfilled }) {
         try {
           const { data } = await queryFulfilled;
@@ -41,6 +39,21 @@ export const postsApi = createApi({
           post_id: credentials.post_id,
         }),
       }),
+    }),
+    createPost: builder.mutation({
+      query: (credentials) => ({
+        url: "createPost",
+        method: "POST",
+        body: JSON.stringify({
+          movie_id: credentials.movie_id,
+          text: credentials.text,
+          year: credentials.year,
+          posterLink: credentials.poster_link,
+          title: credentials.movie_title,
+          rate: credentials.rate,
+        }),
+      }),
+      invalidatesTags: ['Post'],
     }),
     toggleBookmark: builder.mutation({
       query: (credentials) => ({
@@ -60,4 +73,10 @@ export const postsApi = createApi({
   }),
 });
 
-export const { useGetAllPostsQuery, useToggleLikeMutation, useToggleBookmarkMutation, useGetBookmarksQuery } = postsApi;
+export const {
+  useGetAllPostsQuery,
+  useToggleLikeMutation,
+  useToggleBookmarkMutation,
+  useGetBookmarksQuery,
+  useCreatePostMutation,
+} = postsApi;
