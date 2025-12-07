@@ -71,7 +71,13 @@ export const userApi = createApi({
         method: "GET",
       }),
     }),
+    getActivities: builder.query<any, void>({
+      query: () => ({
+        url: "activities",
+        method: "GET",
+      }),
+    }),
   }),
 });
 
-export const { useOnboardingMutation, useFollowUnfollowMutation, useGetRandomUsersQuery, useGetNotificationsQuery } = userApi;
+export const { useOnboardingMutation, useFollowUnfollowMutation, useGetRandomUsersQuery, useGetNotificationsQuery, useGetActivitiesQuery } = userApi;
