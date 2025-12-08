@@ -1,3 +1,41 @@
+# Reelio
+**Social Review App For Movie Reviews** 
+
+<img width="1899" height="868" alt="home" src="https://github.com/user-attachments/assets/e3740381-1cc8-48e4-8248-8f739754cef9" />
+
+
+## Overview
+Reelio is a frontend application built as a part of the graduation project Integrated with Backend and TMDB API. A social platform that allows users to rate movies, write reviews, create lists and search for movies while also allowing them to interact with a community of like-minded movie enthusiasts by following them, liking and commenting on their reviews.
+
+
+## Features
+- SignUp & Login Onboarding Forms.
+- Share Reviews and Rate Movies.
+- Like/Unlike Posts.
+- Suggested Users/Movies.
+- Follow/Unfollow Users.
+- Bookmark Revirews.
+- Create a list for Favourite Movies.
+- Comment on Reviews.
+- Search for any movie.
+- Notifications & Activity pages.
+- Profile Page For Each User.
+- Update/Edit Profile Page User Data.
+- Responsive design to fit all screens with Modern UIUX.
+- Implemented scalable and maintainable reusable components.
+
+## Tech stack
+- Next.js (App Router)
+- React.js
+- TypeScript
+- Tailwind CSS
+- shadCN
+- Redux Toolkit for state management + RTK Query for handling API calls and caching
+- Zod for validations
+- React-Hook-Form
+- UploadThing for image hosting
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
