@@ -9,19 +9,19 @@ Reelio is a frontend application built as a part of the graduation project Integ
 
 
 ## Features
-- SignUp & Login Onboarding Forms.
-- Share Reviews and Rate Movies.
-- Like/Unlike Posts.
-- Suggested Users/Movies.
+- SignUp & Login & Onboarding Forms.
+- Share Posts(Reviews) and Rate Movies.
+- Like/Unlike Posts(Reviews).
+- Suggest Users/Movies.
 - Follow/Unfollow Users.
-- Bookmark Revirews.
+- Bookmark Reviews.
 - Create a list for Favourite Movies.
-- Comment on Reviews.
+- Comment on Posts(Reviews).
 - Search for any movie.
 - Notifications & Activity pages.
 - Profile Page For Each User.
-- Update/Edit Profile Page User Data.
-- Responsive design to fit all screens with Modern UIUX.
+- Update/Edit Profile Page.
+- Responsive Design to fit all screens with Modern UIUX.
 - Implemented scalable and maintainable reusable components.
 
 ## Tech stack
