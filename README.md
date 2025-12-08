@@ -1,5 +1,5 @@
 # Reelio
-**Social Review App For Movie Reviews** 
+**Social Media App For Movie Reviews** 
 
 <img width="1899" height="868" alt="home" src="https://github.com/user-attachments/assets/e3740381-1cc8-48e4-8248-8f739754cef9" />
 
